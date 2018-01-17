@@ -1,0 +1,15 @@
+enabled: true
+from: mailvashko@yahoo.fr
+from_name: mailvashko@yahoo.fr
+to: mailvashko@yahoo.fr
+to_name: 'Vashek Badibanga'
+mailer:
+  engine: smtp
+  smtp:
+    server: localhost
+    port: 25
+    encryption: none
+  sendmail:
+    bin: '/usr/sbin/sendmail -bs'
+content_type: text/html
+debug: true

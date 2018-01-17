@@ -1,0 +1,4 @@
+name: vashko
+email: mailvashko@yahoo.fr
+message: 'jamais jaja'
+

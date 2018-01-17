@@ -1,0 +1,51 @@
+<div id="portfolio">
+  <div class="container">
+    <div class="section_header">
+      <h3>Portfolio</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="filters_container">
+          <ul id="filters">
+            <li><a href="#" data-filter="*" class="active">All</a></li>
+            {% for item in page.header.filters %}
+              <li class="separator">/</li>
+              <li><a href="#" data-filter=".{{ item.name }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="gallery_container">
+          {% for element in page.header.gallery  %}
+            <div class="photo {{ element.filter }}">
+              <img src="{{ page.media[element.image].url }}" class="thumbnail img-responsive" title="vashko" />
+              <span class="mask">
+                <h3>{{ element.description }}</h3>
+                <small>{{ element.filter }}</small>
+                <div class="more">+</div>
+              </span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.content }}
+      </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal-1">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+  </div>
+</div>

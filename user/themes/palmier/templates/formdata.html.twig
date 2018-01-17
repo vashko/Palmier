@@ -1,0 +1,50 @@
+{% embed 'partials/base.html.twig' %}
+
+  {% do assets.addCss('theme://css-compiled/contact.css', 98) %}
+
+  {% block content %}
+
+  <div id="contact">
+    <div class="container">
+      <div class="section_header">
+        <h3>{{ form.message }}</h3>
+      </div>
+      <div class="row contact">
+        {{ page.content }}
+        <div class="col-md-7">
+          {{ content }}
+          <p>Here is the summary of what you wrote to us:</p>
+          {% include "forms/data.html.twig" %}
+        </div>
+        <div class="col-md-5">
+          <div class="map">
+            <div class="box_wrapp">
+              <div class="box_cont">
+                <div class="head">
+                  <h6>Contact</h6>
+                </div>
+                <ul class="street">
+                  <li>2301 East Lamar Blvd. Suite 140.</li>
+                  <li>City, Arlington. United States,</li>
+                  <li>Zip Code, TX 76006.</li>
+                  <li class="icon icontop">
+                    <span class="contacticos ico1"></span>
+                    <span class="text">1 817 274 2933</span>
+                  </li>
+                  <li class="icon">
+                    <span class="contacticos ico2"></span>
+                    <a class="text" href="#">bootstrap@twitter.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}
+
+{% endembed %}

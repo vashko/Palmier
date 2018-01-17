@@ -1,0 +1,22 @@
+email: mailvashko@yahoo.fr
+fullname: 'Vashek Badibanga'
+title: Administrator
+state: enabled
+access:
+  admin:
+    super: 'true'
+    login: 'true'
+  site:
+    login: 'true'
+hashed_password: $2y$10$.cocKZHN2ZrS1EIgwuLtuuHaQZtMY3GllkHLjrwBY2vlFraqzwmUS
+authorized: true
+twofa_secret: NY2V273JMDS3XRB5KNSHNZEAOBESJUHT
+language: fr
+twofa_enabled: false
+login_attempts: {  }
+avatar:
+  user/accounts/avatars/gV2SFwIT9Bmh7Ko.jpg:
+    name: gV2SFwIT9Bmh7Ko.jpg
+    type: image/jpeg
+    size: 84313
+    path: user/accounts/avatars/gV2SFwIT9Bmh7Ko.jpg

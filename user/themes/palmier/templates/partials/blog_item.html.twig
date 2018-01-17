@@ -1,0 +1,44 @@
+<div class="">
+
+  {% set header_image = page.header.header_image|defined(true) %}
+  {% set header_image_width  = page.header.header_image_width|defined(300) %}
+  {% set header_image_height = page.header.header_image_height|defined(150) %}
+  {% set header_image_file = page.header.header_image_file %}
+
+  <div class="row">
+    <div class="col-md-4">
+      {% if header_image %}
+        {% if header_image_file %}
+          {% set header_image_media = page.media.images[header_image_file] %}
+        {% else %}
+          {% set header_image_media = page.media.images|first %}
+        {% endif %}
+        {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
+      {% endif %}
+    </div>
+    <div class="col-md-8">
+      {% if page.header.link %}
+        <span>
+            <h4>
+              <a href="{{ page.header.link }}">{{ page.title }}</a>
+              <span class="pull-right"><small><i>{{ page.date|date("d/m/Y") }}</i></small></span>
+            </h4>
+        </span>
+      {% else %}
+      <h4>
+        <a href="{{ page.url }}">{{ page.title }}</a>
+        <span class="pull-right"><small><i>{{ page.date|date("d/m/Y") }}</i></small></span>
+      </h4>
+      {% endif %}
+      {% if truncate and page.summary != page.content %}
+        <p>{{ page.summary }}</p>
+        <p><a href="{{ page.url }}">{{ 'BLOG.ITEM.CONTINUE_READING'|t }}</a></p>
+      {% elseif truncate %}
+        <p>{{ page.content }}</p>
+      {% else %}
+        <p>{{ page.content }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<hr/>

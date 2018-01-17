@@ -1,0 +1,28 @@
+<div id="team">
+  <div class="container">
+    <div class="section_header">
+        <h3>{{ page.header.title}}</h3>
+    </div>
+    <div class="row people">
+      <div class="row row1">
+        {% for member in page.header.team %}
+        <div class="col-sm-6 bio_box">
+            <img src="{{ page.media[member.image].url }}" alt="">
+            <div class="info">
+              <p class="name">{{ member.name }}</p>
+              <p class="area">{{ member.title }}</p>
+              <a href="{{ member.facebook }}" class="facebook">
+                <span class="socialicons ico1"></span>
+                <span class="socialicons_h ico1h"></span>
+              </a>
+              <a href="{{ member.twitter }}" class="twitter">
+                <span class="socialicons ico2"></span>
+                <span class="socialicons_h ico2h"></span>
+              </a>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

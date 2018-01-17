@@ -1,0 +1,65 @@
+{% embed 'partials/base.html.twig' %}
+
+{% do assets.addCss('theme://css-compiled/portfolio.css', 98) %}
+{% do assets.addCss('theme://css/lib/isotope.css', 100) %}
+{% do assets.addJs('theme://js/jquery.isotope.min.js', {'priority':102, 'group':'bottom'}) %}
+
+{% block content %}
+  {% embed "partials/gallery.html.twig" %}
+  {% endembed %}
+{% endblock %}
+
+{% block bottom %}
+
+  {{ assets.js('bottom') }}
+
+  <script type="text/javascript">
+    $(function(){
+
+      var $container = $('#gallery_container'), $filters = $("#filters a");
+
+      $container.imagesLoaded( function(){
+        $container.isotope({
+          itemSelector : '.photo',
+            masonry: {
+                  columnWidth: 100
+              }
+          });
+      });
+
+      // filter items when filter link is clicked
+      $filters.click(function() {
+          $filters.removeClass("active");
+          $(this).addClass("active");
+          var selector = $(this).data('filter');
+          $container.isotope({ filter: selector });
+          return false;
+      });
+
+
+    });
+  </script>
+  <script>
+  $(document).ready(function() {
+    $('.mask').click(function(){
+      // Get the modal
+      var modal = document.getElementById('myModal');
+      var img = document.getElementById('myImg');
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      modalImg.src = this.previousElementSibling.src;
+      captionText.innerHTML = this.firstElementChild.innerHTML;
+      modal.style.display = "block";
+    });
+    $('.close').click(function(){
+      var modal = document.getElementById('myModal');
+      modal.style.display = "none";
+    });
+  });
+  </script>
+
+{% endblock %}
+
+
+
+{% endembed %}

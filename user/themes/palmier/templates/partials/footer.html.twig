@@ -1,0 +1,44 @@
+<!-- starts footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row info">
+            <div class="col-sm-6 residence">
+                <ul>
+                    <li>{{ config.details.address1 }}</li>
+                    <li>{{ config.details.address2 }}</li>
+                </ul>
+            </div>
+            <div class="col-sm-5 touch">
+                <ul>
+                    <li><strong>Phone: </strong>{{ config.details.phone|first }}</li>
+                    <li><strong>Email: </strong><a href="#">{{ config.details.email|first }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row credits">
+            <div class="col-md-12">
+                <div class="row social">
+                    <div class="col-md-12">
+                      {% if config.details.facebook %}
+                        <a href="https://www.facebook.com/{{ config.details.facebook }}" class="facebook">
+                            <span class="socialicons ico1"></span>
+                            <span class="socialicons_h ico1h"></span>
+                        </a>
+                      {% endif %}
+                      {% if config.details.twitter %}
+                        <a href="https://twitter.com/{{ config.details.twitter }}" class="twitter">
+                            <span class="socialicons ico2"></span>
+                            <span class="socialicons_h ico2h"></span>
+                        </a>
+                      {% endif %}
+                    </div>
+                </div>
+                <div class="row copyright">
+                    <div class="col-md-12">
+                        © 2018 Association Palmier. Tous droits réservés.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

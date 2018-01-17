@@ -1,0 +1,8 @@
+name: 'ABC Company Limited'
+address1: 'Chemin des Coudriers 21'
+address2: '1218 Le Grand- Saconnex'
+email:
+  general: contact@association-palmier.ch
+  support: thomas@association-palmier.ch
+phone:
+  personal: '+41779121916'

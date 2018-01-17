@@ -1,0 +1,30 @@
+<div class="">
+
+  {% set header_image = page.header.header_image|defined(true) %}
+  {% set header_image_width  = page.header.header_image_width|defined(900) %}
+  {% set header_image_height = page.header.header_image_height|defined(400) %}
+  {% set header_image_file = page.header.header_image_file %}
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section_header">
+        <h3><b>{{ page.header.title }}</b></h3>&nbsp; &nbsp;
+        <span class="label label-success">{{ blog.header.title }}</span>
+        <br/>
+        <span class=""><small><i><b>{{ page.date|date("d/m/Y") }}</b></i></small></span>
+      </div>
+      {% if header_image %}
+        {% if header_image_file %}
+          {% set header_image_media = page.media.images[header_image_file] %}
+        {% else %}
+          {% set header_image_media = page.media.images|first %}
+        {% endif %}
+        {{ header_image_media.cropZoom(header_image_width, header_image_height).html }}
+      {% endif %}
+      <div class="text-content">{{ page.content }}</div>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<hr class="style2">

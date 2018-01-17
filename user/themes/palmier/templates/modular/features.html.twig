@@ -1,0 +1,16 @@
+{% set image_media = page.media.images|first %}
+<div id="features">
+  <div class="container">
+    <div class="section_header">
+      <h3>{{ page.header.title }}</h3>
+    </div>
+    <div class="row feature">
+      <div class="col-sm-6">
+        <img src="{{ image_media.url }}" class="img-responsive" />
+      </div>
+      <div class="col-sm-6 info">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</div>

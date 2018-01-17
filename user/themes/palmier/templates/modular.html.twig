@@ -1,0 +1,14 @@
+{% embed 'partials/base.html.twig' %}
+
+{% do assets.addCss('theme://css-compiled/about.css', 98) %}
+{% do assets.addCss('theme://css/lib/flexslider.css', 100) %}
+
+{% block content %}
+    {{ page.content }}
+    {% for module in page.collection() %}
+        <div id="{{ _self.pageLinkName(module.menu) }}"></div>
+        {{ module.content }}
+    {% endfor %}
+{% endblock %}
+
+{% endembed %}

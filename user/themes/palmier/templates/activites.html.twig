@@ -1,0 +1,27 @@
+{% embed 'partials/base.html.twig' %}
+
+  {% do assets.addCss('theme://css-compiled/blog.css', 98) %}
+
+  {% set collection = page.collection() %}
+
+  {% block content %}
+    <div id="blog">
+      <div class="container">
+        <div class="section_header">
+          <h3><b>{{ page.header.title }}</b></h3>
+        </div>
+        <div class="intro">{{ page.content }}</div>
+        {% if collection is not empty %}
+          <div class="section_header">
+            <h3>{{ 'BLOG.ITEM.ACTIVITIES'|t }}:</h3>
+          </div>
+          {% for child in collection %}
+            {% include 'partials/blog_item.html.twig' with {'blog':page, 'page':child, 'truncate':true} %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+  {% endblock %}
+
+{% endembed %}

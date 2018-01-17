@@ -1,0 +1,26 @@
+{% block stylesheets %}
+  {% do assets.addCss('theme://css-compiled/index.css', 101) %}
+{% endblock %}
+{{ assets.css() }}
+
+{% block javascripts %}
+  {% do assets.addJs('theme://js/index-slider.js', 100) %}
+{% endblock %}
+{{ assets.js() }}
+
+<section id="feature_slider" class="lol">
+  {% for slide in page.header.slides %}
+  <article class="slide" id="showcasing"
+    {% if page.media[slide.image] %}
+      style="background: url({{ page.media[slide.background].url }}) repeat-x top center;"
+    {% endif %}
+  >
+    <img class="asset left-30 sp600 t120 z1" src="{{ page.media[slide.image].url }}" />
+    <div class="info">
+        <h2>{{ slide.heading }}</h2>
+        <h4>{{ slide.subheading }}</h4>
+        <a href="{{ slide.button_url }}">{{ slide.button_text }}</a>
+    </div>
+  </article>
+  {% endfor %}
+</section>

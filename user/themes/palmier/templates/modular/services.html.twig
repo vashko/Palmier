@@ -1,0 +1,29 @@
+<div id="showcase">
+  <div class="container">
+    <div class="section_header">
+        <h3>{{ page.header.title}}</h3>
+    </div>
+    <div class="row feature_wrapper">
+      <!-- Features Row -->
+      <div class="features_op1_row">
+        {% for service in page.header.services %}
+        <!-- Feature -->
+        <div class="col-sm-4 feature">
+            <div class="img_box">
+                <a href="{{ service.button_url }}">
+                    <img src="{{ page.media[service.image].url }}">
+                    <span class="circle">
+                        <span class="plus">&#43;</span>
+                    </span>
+                </a>
+            </div>
+            <div class="text">
+                <h6>{{ service.heading }}</h6>
+                <p>{{ service.text }}</p>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
