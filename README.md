@@ -1,3 +1,4 @@
+```
 …or create a new repository on the command line
 
 echo "# Palmier" >> README.md
@@ -12,3 +13,4 @@ git remote add origin https://github.com/vashko/Palmier.git
 git push -u origin master
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+```
