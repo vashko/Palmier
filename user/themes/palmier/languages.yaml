@@ -4,9 +4,13 @@ en:
     ITEM:
       CONTINUE_READING: Continue reading...
       ACTIVITIES: activities
+  CONTACT:
+    SUMMARY: Here is the summary of what you wrote to us
 fr:
   TRANSLATION_TEST: Palmier en Francais!
   BLOG:
     ITEM:
       CONTINUE_READING: Lire la suite...
       ACTIVITIES: activités
+  CONTACT:
+    SUMMARY: Voici le résumé de ce que vous nous avez écrit:

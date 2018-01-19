@@ -53,7 +53,7 @@ form:
                 extension: txt
                 body: '{% include ''forms/data.txt.twig'' %}'
         -
-            message: 'Thank you for your feedback!'
+            message: 'Merci pour votre avis!'
         -
             display: thankyou
 ---
